@@ -20,6 +20,7 @@ class App:
         self.root = tk.Tk()
         self.root.geometry("550x230") 
         self.root.title("Job Finder") 
+        self.root.resizable(False, False)
 
         self.app_title = tk.Label(self.root, text="Job Finder", font=("Arial Bold", 17))
         self.app_title.pack(pady=(10, 0))
