@@ -109,7 +109,8 @@ class App:
         if self.is_headless_var.get():
             options.add_argument("--headless")
 
-        driver = webdriver.Firefox(options=options)
+        service = webdriver.firefox.service.Service(log_output=os.devnull)
+        driver = webdriver.Firefox(service=service, options=options)
 
         my_jobs = []
 
