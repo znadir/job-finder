@@ -122,6 +122,9 @@ class App:
         messagebox.showinfo("Job Finder", "File generated successfully")
     
     def open_file(self):
-        os.startfile(self.doc_path)
+        if os.path.exists(self.doc_path):
+            os.startfile(self.doc_path)
+        else:
+            messagebox.showerror("Job Finder", "File not found. Please generate it first")
 
 App()
