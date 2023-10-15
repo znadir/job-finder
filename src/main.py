@@ -9,7 +9,7 @@ from selenium.webdriver.firefox.options import Options
 
 class App:
     def __init__(self):
-        self.doc_path = os.path.join(os.path.dirname(__file__), "./jobs.docx")
+        self.doc_path = os.path.expanduser("~/Documents/jobs.docx")
 
         self.init_gui()
 
