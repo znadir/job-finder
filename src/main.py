@@ -64,6 +64,7 @@ class App:
         self.is_headless_var = tk.BooleanVar(self.frame)
         self.is_headless = tk.Checkbutton(self.frame, variable=self.is_headless_var)
         self.is_headless.grid(row=3, column=1, sticky="w")
+        self.is_headless.select()
 
         self.frame.pack()
 
