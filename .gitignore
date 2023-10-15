@@ -1,4 +1,7 @@
 .venv
-files/*jobs.docx
+jobs.docx
 geckodriver.log
 *__pycache__
+main.spec
+build/
+dist/

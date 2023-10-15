@@ -1,15 +1,14 @@
 import time
-from selenium import webdriver
-#from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import html2text
 
-def searchJobs(search_url, jobOffersSelector, jobTitleSelector, jobLinkSelector, jobSnippetSelector, query, must_keywords):
-    driver = webdriver.Firefox()
+def searchJobs(driver, search_url:str, jobOffersSelector:str, jobTitleSelector:str, jobLinkSelector:str, jobSnippetSelector:str, query:str, must_keywords:list):
+    """
+    Search for jobs
+    Return a list of jobs
+    """
     driver.get(search_url + query.lower().replace(" ", "+"))
-
     driver.execute_script("window.scrollTo(0, 10000)")
-    time.sleep(2)
 
     job_offers = driver.find_elements(By.CSS_SELECTOR, jobOffersSelector)
 
@@ -33,7 +32,5 @@ def searchJobs(search_url, jobOffersSelector, jobTitleSelector, jobLinkSelector,
         except:
             # not a job offer
             pass
-
-    driver.close()
 
     return my_jobs

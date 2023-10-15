@@ -18,3 +18,9 @@ touch files/jobs.docx
 ```bash
 python src/main.py
 ```
+
+## Compile
+
+```bash
+pyinstaller src/main.py --windowed --onefile --icon="icon.ico"
+```
